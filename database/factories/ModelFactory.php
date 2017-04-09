@@ -12,7 +12,10 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+use App\Models\Thread;
+use App\Models\User;
+
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -20,5 +23,31 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(Thread::class, function(Faker\Generator $faker) {
+    return [
+       'title' => $faker->sentence,
+       'user_id' => function() {
+           $user_ids = User::pluck('id');
+           return $user_ids[random_int(0, (count($user_ids) - 1))];
+       },
+       'body' => $faker->text
+   ];
+});
+
+
+$factory->define(\App\Models\Reply::class, function(Faker\Generator $faker) {
+    return [
+        'body' => $faker->text,
+        'user_id' => function() {
+            $user_ids = User::pluck('id');
+            return $user_ids[random_int(0, (count($user_ids) - 1))];
+        },
+        'thread_id' => function() {
+            $threads_id = Thread::pluck('id');
+            return $threads_id[random_int(0, (count($threads_id) - 1))];
+        }
     ];
 });
