@@ -9,7 +9,7 @@
 
 ## About this project
 This project was made for learning purposes. Actually, I'm trying to learn Laravel. I've already done a traditional [MVC Blog](https://github.com/Liinkiing/laravel-blog) with Laravel. 
-With this project, I want to make something bigger, with more concepts (Laravel events system, Real time notifications, Unit testing...). The project will be updated when I have time 
+With this project, I want to make something bigger, with more concepts (Laravel events system, Real time notifications, Unit testing, features testing...). The project will be updated when I have time 
 to play with the framework.
 
 ## About Laravel

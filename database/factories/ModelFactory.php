@@ -43,10 +43,12 @@ $factory->define(\App\Models\Reply::class, function(Faker\Generator $faker) {
         'body' => $faker->text,
         'user_id' => function() {
             $user_ids = User::pluck('id');
+            if($user_ids->isEmpty()) return 1;
             return $user_ids[random_int(0, (count($user_ids) - 1))];
         },
         'thread_id' => function() {
             $threads_id = Thread::pluck('id');
+            if($threads_id->isEmpty()) return 1;
             return $threads_id[random_int(0, (count($threads_id) - 1))];
         }
     ];

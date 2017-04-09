@@ -20,8 +20,11 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Reply whereThreadId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Reply whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Reply whereUserId($value)
+ * @property-read \App\Models\User $author
  */
 class Reply extends Model
 {
-    //
+    public function author() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

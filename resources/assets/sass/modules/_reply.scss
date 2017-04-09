@@ -1,0 +1,11 @@
+.reply {
+  padding: 10px;
+  color: black;
+  border-radius: 5px;
+  background: whitesmoke;
+  box-shadow: $main-box-shadow;
+  margin-bottom: 20px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
