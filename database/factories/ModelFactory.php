@@ -31,6 +31,7 @@ $factory->define(Thread::class, function(Faker\Generator $faker) {
        'title' => $faker->sentence,
        'user_id' => function() {
            $user_ids = User::pluck('id');
+           if($user_ids->isEmpty()) return 1;
            return $user_ids[random_int(0, (count($user_ids) - 1))];
        },
        'body' => $faker->text

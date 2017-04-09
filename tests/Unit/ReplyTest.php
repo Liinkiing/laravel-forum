@@ -12,7 +12,10 @@ class ReplyTest extends TestCase
 {
     use DatabaseMigrations;
 
-    public function test_reply_has_author()
+    /**
+     * @test
+     */
+    public function it_should_have_author()
     {
         /** @var Reply $reply */
         factory(User::class)->create();
