@@ -23,9 +23,12 @@ class LoginController extends Controller
     /**
      * Where to redirect users after login.
      *
-     * @var string
+     * @return string
      */
-    protected $redirectTo = '/home';
+    public function redirectPath()
+    {
+        return route('threads.index');
+    }
 
     /**
      * Create a new controller instance.

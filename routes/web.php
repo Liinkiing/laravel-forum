@@ -13,4 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('homepage');
+
+Route::resource('threads', 'ThreadController');
+
+Auth::routes();
+
+Route::get('/logout', 'Auth\LoginController@logout');
+

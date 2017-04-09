@@ -1,1 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+/* Loading components SCSS files */
+
+@import "components/palette";
 @import "components/variables";
+@import "components/bootstrap-reboot.min.css";
+@import "components/bootstrap-grid.min.css";
+
+/* Loading layouts SCSS files */
+@import "layouts/general";
+
+/* Loading modules SCSS files */
+@import "modules/nav";
+@import "modules/thread";
+
