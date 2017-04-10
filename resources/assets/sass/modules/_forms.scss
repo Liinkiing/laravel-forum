@@ -1,0 +1,26 @@
+form {
+  &.login-form {
+    width: 100%
+  }
+  & .form-group {
+    margin: 20px;
+  }
+  & label {
+    display: block;
+  }
+  & input,textarea {
+    transition: all 0.3s;
+    width: 100%;
+    padding: 10px 20px;
+    background: lighten($dark-grey, 13%);
+    outline: none;
+    border: 2px solid lighten($grey, 8%);
+    box-shadow: $button-box-shadow;
+    &:focus {
+      background: lighten($grey, 7%);
+    }
+  }
+  & textarea {
+    border-radius: 5px;
+  }
+}

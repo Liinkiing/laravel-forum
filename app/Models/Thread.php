@@ -20,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Thread whereTitle($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Thread whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Thread whereUserId($value)
+ * @property-read \App\Models\User $author
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Reply[] $replies
  */
 class Thread extends Model
 {
@@ -29,7 +31,7 @@ class Thread extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function replies() {
-        return $this->hasMany(Reply::class);
+    public function replies($order = 'desc') {
+        return $this->hasMany(Reply::class)->orderBy('created_at', $order);
     }
 }

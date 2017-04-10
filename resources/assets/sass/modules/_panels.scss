@@ -1,0 +1,20 @@
+$panel-padding: 30px;
+$panel-radius: 5px;
+
+.panel {
+  color: black;
+  border-radius: $panel-radius;
+  box-shadow: $main-box-shadow;
+  & .panel-heading {
+    border-top-left-radius: $panel-radius;
+    border-top-right-radius: $panel-radius;
+    padding: #{$panel-padding - 10} $panel-padding #{$panel-padding - 20} $panel-padding;
+    background: $grey;
+  }
+  & .panel-body {
+    background: lighten($grey, 7%);
+    border-bottom-left-radius: $panel-radius;
+    border-bottom-right-radius: $panel-radius;
+    padding: $panel-padding;
+  }
+}

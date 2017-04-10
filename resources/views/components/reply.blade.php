@@ -1,3 +1,3 @@
-<div class="reply">
+<li class="reply">
     {{ $slot }}
-</div>
+</li>

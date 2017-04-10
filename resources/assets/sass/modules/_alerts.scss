@@ -1,0 +1,24 @@
+.alerts {
+  margin-bottom: 40px;
+  & .alert {
+    padding: 20px;
+    border-radius: 5px;
+    background: $grey;
+    box-shadow: $nav-box-shadow;
+    margin-bottom: 10px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    & ul {
+      padding: 0 0 0 20px;
+      margin: 0;
+    }
+    &.alert-danger {
+      background: $red;
+      border: 2px solid lighten($red, 10%);
+      color: lighten($dark-red, 55%);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.36);
+    }
+  }
+}
+

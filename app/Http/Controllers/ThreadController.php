@@ -14,7 +14,7 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        $threads = Thread::latest()->get();
+        $threads = Thread::with('replies')->latest()->get();
         return view('thread.index', compact('threads'));
     }
 
@@ -47,6 +47,7 @@ class ThreadController extends Controller
      */
     public function show(Thread $thread)
     {
+        $thread->load('replies.author');
         return view('thread.show', compact('thread'));
     }
 

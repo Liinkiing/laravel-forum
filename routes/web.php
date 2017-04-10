@@ -20,6 +20,3 @@ Route::resource('threads', 'ThreadController');
 Route::post('/threads/{thread}/replies', 'ReplyController@store')->name('replies.store');
 
 Auth::routes();
-
-Route::get('/logout', 'Auth\LoginController@logout');
-

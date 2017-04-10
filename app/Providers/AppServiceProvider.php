@@ -5,6 +5,7 @@ namespace App\Providers;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Carbon\Carbon;
 use Barryvdh\Debugbar\ServiceProvider as DebugBarSP;
+use Collective\Html\HtmlServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,5 +31,6 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(IdeHelperServiceProvider::class);
             $this->app->register(DebugBarSP::class);
         }
+        $this->app->register(HtmlServiceProvider::class);
     }
 }

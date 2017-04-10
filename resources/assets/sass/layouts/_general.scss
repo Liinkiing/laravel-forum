@@ -4,12 +4,25 @@
 
 body {
   color: whitesmoke;
-  font-family: 'PT Sans', 'Lato', 'Roboto', 'sans-serif';
+  font-family: $font-family;
   background: $dark-blue;
+}
+
+button, input, textarea {
+  font-family: $font-family;
+}
+
+.row.center {
+  justify-content: center;
+  text-align: center;
 }
 
 main.container {
   padding-top: calc(#{$nav-height} + 40px);
+  @media (min-width: 1200px) {
+    width: 1300px;
+    max-width: 100%;
+  }
 }
 
 a {

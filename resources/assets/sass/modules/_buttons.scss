@@ -1,0 +1,18 @@
+.btn {
+  transition: all 0.3s;
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  box-shadow: $button-box-shadow;
+  &:hover {
+    cursor: pointer;
+  }
+  &.btn-primary {
+    background: $blue;
+    color: whitesmoke;
+    &:hover {
+      background: lighten($blue, 5%);
+    }
+  }
+}

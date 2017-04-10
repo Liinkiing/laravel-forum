@@ -23,8 +23,10 @@
 <body>
     <div id="app">
         @include('layouts.partials.nav')
-
-        @yield('content')
+        <main class="container">
+            @include('inc.alerts')
+            @yield('content')
+        </main>
     </div>
 
     <!-- Scripts -->
